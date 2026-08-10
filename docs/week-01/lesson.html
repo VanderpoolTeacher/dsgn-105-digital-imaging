@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 01 · The file, and how it holds together — Lesson &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 1</a><span>/</span><em>Lesson</em></nav>
+<article class="doc"><h1 id="week-01--the-file-and-how-it-holds-together--lesson">Week 01 ·
+The file, and how it holds together — Lesson</h1>
+<p><strong>DSGN 105 · Digital Imaging</strong></p>
+<p><strong>Read this before the session.</strong> About 15 minutes.</p>
+<p>This is the first week, so nothing is assumed. What it adds is the
+one idea the rest of the course is built on: an image file is not a
+picture. It is a <strong>record of how a picture was made</strong>, and
+in this course that record is part of what you hand in.</p>
+<hr />
+<h2 id="1--raster-and-vector">1 · Raster and vector</h2>
+<p>Digital images are stored two ways.</p>
+<p><strong>Raster</strong> images are a grid of pixels. Each pixel holds
+a colour, and the image is however many pixels wide by however many
+tall. Photographs are raster. Everything in this course is raster.</p>
+<p><strong>Vector</strong> images are stored as mathematical paths — a
+line described by its endpoints rather than by the pixels along it.
+Logos and type are usually vector. Vector is owned by <strong>DSGN
+107</strong>, and you will meet it properly there.</p>
+<p>The difference that matters right now is what happens when you make
+an image bigger.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Raster</th>
+<th>Vector</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Has a fixed number of pixels. Enlarge it and the software has to
+invent the new ones</td>
+<td>Has no pixels until it is drawn. Enlarge it and it is redrawn at the
+new size</td>
+</tr>
+<tr>
+<td>A photograph enlarged 4× looks soft or blocky</td>
+<td>A logo enlarged 40× looks identical</td>
+</tr>
+<tr>
+<td><strong>The pixel count is a hard limit on physical
+size</strong></td>
+<td>There is no equivalent limit</td>
+</tr>
+</tbody>
+</table></div>
+<p>That last row is the one to keep. A raster image carries a fixed
+amount of information, and no amount of enlarging adds more. You will
+meet the consequences of this properly in week 3.</p>
+<hr />
+<h2 id="2--layers">2 · Layers</h2>
+<p>A <strong>layer</strong> is one stacked element of an image, editable
+without affecting the others. A composition built in layers can be
+rearranged, hidden, recoloured, and reordered indefinitely. The same
+composition flattened into one layer can be none of those things.</p>
+<p><strong>Layer groups</strong> collect related layers into one
+collapsible item. They are usually taught as tidiness. They are not
+tidiness — they are the difference between a stack somebody can read and
+a stack nobody can.</p>
+<p>A nine-layer file with no groups is a list. A nine-layer file in
+three named groups is a description of how the image works.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>A stack that cannot be read</th>
+<th>A stack that can</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Layer 14 copy 3</code></td>
+<td><code>Sky / gradient</code></td>
+</tr>
+<tr>
+<td>Nine layers, flat list, no order</td>
+<td>Three groups: background, subject, type</td>
+</tr>
+<tr>
+<td>Named after what was done to make it</td>
+<td>Named after what it is in the image</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="3--non-destructive-editing">3 · Non-destructive editing</h2>
+<p><strong>Non-destructive</strong> means any edit you can reverse
+without having altered the original pixels.</p>
+<p>Take brightening an image. There are two ways to do it:</p>
+<p><strong>Destructive.</strong> Apply the brightness change directly to
+the pixels. The pixels are now different. If you decide tomorrow that it
+was too much, you cannot go back to what was there — you can only darken
+the already-brightened pixels, which is not the same thing and does not
+recover what was lost.</p>
+<p><strong>Non-destructive.</strong> Add an <strong>adjustment
+layer</strong> — a correction that sits as its own layer above the
+image, changing how it looks without changing what it is. Tomorrow you
+open the file, double-click the adjustment, and change your mind. The
+original pixels never moved.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th>Destructive</th>
+<th>Non-destructive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Changing your mind</td>
+<td>Start again</td>
+<td>Double-click the adjustment</td>
+</tr>
+<tr>
+<td>What the file records</td>
+<td>The result</td>
+<td>The result <strong>and the decision</strong></td>
+</tr>
+<tr>
+<td>After a week</td>
+<td>You cannot tell what was done</td>
+<td>The decision is still sitting there, still editable</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>In this course, non-destructive is a requirement, not a
+preference.</strong> Three assessments look at how your files are built:
+this week's, week 5's composite, and the campaign image set, which is
+25% of the campaign. A <strong>flattened</strong> file — one whose
+layers have been merged — cannot be assessed against any of them,
+because there is nothing left to look at.</p>
+<p>There is a plainer reason too. A file another person can open and
+continue is a file you can hand to a client, a collaborator, or yourself
+in six weeks. A flattened export is a dead end for everybody including
+you.</p>
+<hr />
+<h2 id="4--why-the-reader-matters">4 · Why the reader matters</h2>
+<p>Here is the part that surprises people.</p>
+<p>Your composition this week is not graded on how it looks. It is
+graded on <strong>whether another student can open it and carry on
+working.</strong></p>
+<p>That is not a proxy for how good it looks. It is the actual thing
+being tested, because a good-looking image proves almost nothing about
+who made it or how. An attractive flattened file could have been
+downloaded, handed over, or produced by following a tutorial keystroke
+by keystroke — and once the layers are gone, none of those are
+distinguishable from your own work.</p>
+<p>The stack is the evidence. And legibility to somebody else is the one
+test of it you cannot mark for yourself.</p>
+<hr />
+<h2 id="module-1-vocabulary">Module 1 vocabulary</h2>
+<p>These belong to this module. Use them in the lab, the assignment, and
+the critique sessions later in the term.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Raster</strong></td>
+<td>Image data stored as a grid of pixels. What this course works
+in</td>
+</tr>
+<tr>
+<td><strong>Vector</strong></td>
+<td>Image data stored as mathematical paths. Named here for contrast;
+owned by DSGN 107</td>
+</tr>
+<tr>
+<td><strong>Layer</strong></td>
+<td>One stacked element of an image, editable without affecting the
+others</td>
+</tr>
+<tr>
+<td><strong>Adjustment layer</strong></td>
+<td>A correction applied as its own layer, reversible without loss</td>
+</tr>
+<tr>
+<td><strong>Non-destructive</strong></td>
+<td>Any edit that can be reversed without having altered the original
+pixels</td>
+</tr>
+<tr>
+<td><strong>Working file</strong></td>
+<td>The layered file an image is built in and submitted as</td>
+</tr>
+<tr>
+<td><strong>Flattened</strong></td>
+<td>An image whose layers have been merged, destroying the record of how
+it was built. Not acceptable as a working file</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="words-you-will-hear-but-do-not-own-yet">Words you will hear but
+do not own yet</h3>
+<ul>
+<li><strong>Mask</strong> — a way of hiding part of a layer without
+deleting it. Mentioned in the demo. Owned and assessed in <strong>week
+5</strong>.</li>
+<li><strong>Composition, visual hierarchy</strong> — you will hear these
+named this week so the words exist when you judge images in week 2. They
+are owned and assessed in <strong>week 4</strong>, where you perform
+them rather than recognise them.</li>
+</ul>
+<hr />
+<h2 id="check-yourself-before-the-session">Check yourself before the
+session</h2>
+<p>Not graded. Two of these matter more than the others.</p>
+<ol type="1">
+<li>You need an image for a poster two metres wide. Does it matter
+whether the source is raster or vector? Why?</li>
+<li>What is the difference between hiding a layer and deleting it?</li>
+<li><strong>You brighten an image, save, and reopen it a week later
+wanting it darker. What can you do — and what does the answer depend
+on?</strong> <em>(If this is not obvious, re-read section 3.)</em></li>
+<li>Name two things a layer called <code>Sky / gradient</code> tells a
+reader that <code>Layer 14 copy 3</code> does not.</li>
+<li><strong>Why is "another student can continue your file" a better
+test of this week's outcome than "the image looks good"?</strong>
+<em>(If this is not obvious, re-read section 4.)</em></li>
+<li>What does <em>flattened</em> mean, and why is a flattened file not
+acceptable as a working file here?</li>
+</ol>
+<hr />
+<h2 id="what-happens-in-the-session">What happens in the session</h2>
+<p>You will watch the same correction applied two ways and then changed
+— which takes four minutes and settles the whole argument for
+non-destructive editing. Then you build a composition from supplied
+parts in the <a href="lab.html">lab</a>, and swap machines to read
+somebody else's.</p>
+<p>Afterwards you finish it and submit it as the <a
+href="assignment.html">assignment</a>, and choose the nonprofit your
+campaign will be built for.</p>
+</article>
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>

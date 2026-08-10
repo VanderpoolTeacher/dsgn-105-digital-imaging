@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 4 slides &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 4</a><span>/</span><em>Slides</em></nav>
+<h1>Week 4 slides<span class="sub">What the eye does first</span></h1><p class="rvnote">What was on screen in class. Arrow keys or click to move.</p><div class="deckwrap" id="deckwrap"><div class="deck" id="deck" tabindex="0"><section class="slide split"><div class="stext"><p class="sn">1 / 8</p><h2>What did you notice first?</h2><div class="sbody"><p>(One image from the found-image set. No caption, no question
+written.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">2 / 8</p><h2>The five mechanisms</h2><div class="sbody">
+
+<p><strong>Scale</strong> · <strong>Contrast</strong> ·
+<strong>Placement</strong> · <strong>Direction</strong> ·
+<strong>Isolation</strong></p>
+<p>Causes, not a checklist.</p>
+</div></div></section>
+<section class="slide split"><div class="stext"><p class="sn">3 / 8</p><h2>Isolation is the one you will underuse</h2><div class="sbody">
+
+<p>(Two versions of one arrangement, side by side: crowded, and the
+same subject with space around it.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">4 / 8</p><h2>You cannot mark your own</h2><div class="sbody">
+
+<p>Your own reading of your own image is <strong>not
+evidence</strong>.<br />
+Neither is mine.<br />
+Neither is a classmate's, if you told them first.</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">5 / 8</p><h2>The subject-matter trap</h2><div class="sbody">
+
+<p>"The eye went to the only face."</p>
+<p>You did not arrange that. The world did.</p>
+<p><strong>Could you have changed it?</strong></p>
+</div></div></section>
+<section class="slide split"><div class="stext"><p class="sn">6 / 8</p><h2>Demo — the same image, asked two ways</h2><div class="sbody">
+
+<p>(Deliberately empty. Two volunteers, one image, two question
+sets.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">7 / 8</p><h2>Write your questions down first</h2><div class="sbody">
+
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Leading</th>
+<th>Not leading</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"This is about the volunteer — where does your eye go?"</td>
+<td>"What do you notice first?"</td>
+</tr>
+<tr>
+<td>"Do you see the sign at the back?"</td>
+<td>"And after that?"</td>
+</tr>
+<tr>
+<td>"Does she stand out?"</td>
+<td>"Anything else?"</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>You are marked on the wording of what you asked, not on what
+you found.</strong></p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">8 / 8</p><h2>The lab</h2><div class="sbody">
+
+<p><strong>1</strong> Write your intended order and your questions —
+hand both in<br />
+<strong>2</strong> Test on <strong>two viewers from outside this
+class</strong><br />
+<strong>3</strong> Record what they said, including what you did not
+want<br />
+<strong>4</strong> <strong>Start shooting your campaign</strong><br />
+<strong>5</strong> Critique session 1</p>
+<p>5% of your course grade.</p>
+</div></div></section></div><div class="dhud"><button type="button" id="prev">&larr; Back</button><span id="dcount"></span><span class="dright"><button type="button" id="fs">Full screen</button><button type="button" id="next">Next &rarr;</button></span></div></div>
+<script>
+(function(){
+  var d=document.getElementById('deck');
+  if(!d) return;
+  var s=[].slice.call(d.querySelectorAll('.slide')), i=0,
+      c=document.getElementById('dcount');
+  var pv=document.getElementById('prev'), nx=document.getElementById('next');
+  function show(n){ i=Math.max(0,Math.min(s.length-1,n));
+    s.forEach(function(el,k){el.classList.toggle('on',k===i);});
+    c.textContent=(i+1)+' / '+s.length;
+    pv.disabled=(i===0); nx.disabled=(i===s.length-1); }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'){show(i-1);e.preventDefault();}
+    else if(e.key==='Home'){show(0);e.preventDefault();}
+    else if(e.key==='End'){show(s.length-1);e.preventDefault();}});
+  d.addEventListener('click',function(){ if(i<s.length-1) show(i+1); });
+  document.getElementById('next').addEventListener('click',function(e){e.stopPropagation();show(i+1);});
+  document.getElementById('prev').addEventListener('click',function(e){e.stopPropagation();show(i-1);});
+  var wrap=document.getElementById('deckwrap'), fsb=document.getElementById('fs');
+  function inFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function paint(on){ wrap.classList.toggle('presenting',on);
+    document.body.classList.toggle('presenting',on);
+    fsb.textContent=on?'Exit full screen':'Full screen';
+    if(on) d.focus(); }
+  fsb.addEventListener('click',function(e){ e.stopPropagation();
+    var on=!wrap.classList.contains('presenting');
+    paint(on);
+    try{ if(on){ (wrap.requestFullscreen||wrap.webkitRequestFullscreen||function(){}).call(wrap); }
+         else if(inFS()){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); } }
+    catch(err){}
+  });
+  ['fullscreenchange','webkitfullscreenchange'].forEach(function(ev){
+    document.addEventListener(ev,function(){ if(!inFS()) paint(false); });});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&wrap.classList.contains('presenting')) paint(false);});
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('.opt'); if(!b) return;
+    e.stopPropagation();
+    var box=b.closest('.check'), fb=box.querySelector('.qfb'),
+        ok=b.dataset.k===box.dataset.answer;
+    box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('picked');});
+    b.classList.add('picked');
+    box.classList.toggle('right',ok); box.classList.toggle('wrong',!ok);
+    var t=b.dataset.fb.replace(/^(Right|Yes|Correct)[.,]?\s*/i,'');
+    fb.innerHTML='<b>'+(ok?'Yes.':'Not this one.')+'</b> '+t;
+  },true);
+  var x=null;
+  d.addEventListener('touchstart',function(e){x=e.changedTouches[0].clientX;},{passive:true});
+  d.addEventListener('touchend',function(e){ if(x===null)return;
+    var dx=e.changedTouches[0].clientX-x; if(Math.abs(dx)>45) show(dx<0?i+1:i-1); x=null;},{passive:true});
+  show(0);
+})();
+</script>
+
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>

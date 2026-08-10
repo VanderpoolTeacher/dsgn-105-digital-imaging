@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 7 slides &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 7</a><span>/</span><em>Slides</em></nav>
+<h1>Week 7 slides<span class="sub">Meeting a viewer who was not told</span></h1><p class="rvnote">What was on screen in class. Arrow keys or click to move.</p><div class="deckwrap" id="deckwrap"><div class="deck" id="deck" tabindex="0"><section class="slide"><div class="stext"><p class="sn">1 / 7</p><h2>The order of operations</h2><div class="sbody"><p><strong>1</strong> Print first — it has a queue<br />
+<strong>2</strong> Then the reading-order test — it needs two people
+from outside this class<br />
+<strong>3</strong> Then the sequence — the only thing with no external
+dependency</p>
+<p><strong>Due this week: Phase 4 and Phase 5. 30% of your
+campaign.</strong></p>
+</div></div></section>
+<section class="slide split"><div class="stext"><p class="sn">2 / 7</p><h2>Demo — one set, two orders</h2><div class="sbody">
+
+<p>(Deliberately empty. The same seven images, arranged two
+ways.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">3 / 7</p><h2>The swap test</h2><div class="sbody">
+
+<p><strong>Swap your first and last image. Read the set
+again.</strong></p>
+<p>If nothing changed, the order is not doing work yet.</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">4 / 7</p><h2>Week 3, on your own image</h2><div class="sbody">
+
+<p>One working file → <strong>two destinations</strong><br />
+Pixel dimensions and resolution · file format · colour system ·
+<strong>and why, for that destination</strong></p>
+<p><strong>Reopen both delivered files. Read the numbers off the
+files.</strong></p>
+<p>Component D · 15% of your campaign · <strong>and you have to
+actually print it</strong></p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">5 / 7</p><h2>Week 4, on your own image</h2><div class="sbody">
+
+<p>Intended order · <strong>exact questions written first</strong> · two
+viewers from outside this class · verbatim answers</p>
+<p><strong>7.3 — act on a result that contradicts your
+intent.</strong></p>
+<p>Component E · 15% of your campaign</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">6 / 7</p><h2>The change goes everywhere</h2><div class="sbody">
+
+<p>The test tells you something about <strong>how you
+compose</strong>,<br />
+not about <strong>one photograph</strong>.</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">7 / 7</p><h2>The lab</h2><div class="sbody">
+
+<p><strong>1</strong> Output package — build, <strong>print</strong>,
+verify<br />
+<strong>2</strong> Reading-order test — two outside viewers, questions
+written first<br />
+<strong>3</strong> Sequence<br />
+<strong>4</strong> <strong>Critique session 4 — the last
+one</strong></p>
+<p>Phases 4 and 5 due. 30% of your campaign.</p>
+</div></div></section></div><div class="dhud"><button type="button" id="prev">&larr; Back</button><span id="dcount"></span><span class="dright"><button type="button" id="fs">Full screen</button><button type="button" id="next">Next &rarr;</button></span></div></div>
+<script>
+(function(){
+  var d=document.getElementById('deck');
+  if(!d) return;
+  var s=[].slice.call(d.querySelectorAll('.slide')), i=0,
+      c=document.getElementById('dcount');
+  var pv=document.getElementById('prev'), nx=document.getElementById('next');
+  function show(n){ i=Math.max(0,Math.min(s.length-1,n));
+    s.forEach(function(el,k){el.classList.toggle('on',k===i);});
+    c.textContent=(i+1)+' / '+s.length;
+    pv.disabled=(i===0); nx.disabled=(i===s.length-1); }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'){show(i-1);e.preventDefault();}
+    else if(e.key==='Home'){show(0);e.preventDefault();}
+    else if(e.key==='End'){show(s.length-1);e.preventDefault();}});
+  d.addEventListener('click',function(){ if(i<s.length-1) show(i+1); });
+  document.getElementById('next').addEventListener('click',function(e){e.stopPropagation();show(i+1);});
+  document.getElementById('prev').addEventListener('click',function(e){e.stopPropagation();show(i-1);});
+  var wrap=document.getElementById('deckwrap'), fsb=document.getElementById('fs');
+  function inFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function paint(on){ wrap.classList.toggle('presenting',on);
+    document.body.classList.toggle('presenting',on);
+    fsb.textContent=on?'Exit full screen':'Full screen';
+    if(on) d.focus(); }
+  fsb.addEventListener('click',function(e){ e.stopPropagation();
+    var on=!wrap.classList.contains('presenting');
+    paint(on);
+    try{ if(on){ (wrap.requestFullscreen||wrap.webkitRequestFullscreen||function(){}).call(wrap); }
+         else if(inFS()){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); } }
+    catch(err){}
+  });
+  ['fullscreenchange','webkitfullscreenchange'].forEach(function(ev){
+    document.addEventListener(ev,function(){ if(!inFS()) paint(false); });});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&wrap.classList.contains('presenting')) paint(false);});
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('.opt'); if(!b) return;
+    e.stopPropagation();
+    var box=b.closest('.check'), fb=box.querySelector('.qfb'),
+        ok=b.dataset.k===box.dataset.answer;
+    box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('picked');});
+    b.classList.add('picked');
+    box.classList.toggle('right',ok); box.classList.toggle('wrong',!ok);
+    var t=b.dataset.fb.replace(/^(Right|Yes|Correct)[.,]?\s*/i,'');
+    fb.innerHTML='<b>'+(ok?'Yes.':'Not this one.')+'</b> '+t;
+  },true);
+  var x=null;
+  d.addEventListener('touchstart',function(e){x=e.changedTouches[0].clientX;},{passive:true});
+  d.addEventListener('touchend',function(e){ if(x===null)return;
+    var dx=e.changedTouches[0].clientX-x; if(Math.abs(dx)>45) show(dx<0?i+1:i-1); x=null;},{passive:true});
+  show(0);
+})();
+</script>
+
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>

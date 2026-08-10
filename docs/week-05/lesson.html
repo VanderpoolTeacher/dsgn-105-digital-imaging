@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 05 · Isolating and combining — Lesson &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 5</a><span>/</span><em>Lesson</em></nav>
+<article class="doc"><h1 id="week-05--isolating-and-combining--lesson">Week 05 · Isolating
+and combining — Lesson</h1>
+<p><strong>DSGN 105 · Digital Imaging</strong></p>
+<p><strong>Read this before the session.</strong> About 20 minutes.</p>
+<p>Last week you found out that you cannot judge your own composition.
+This week the same problem appears in a different form: <strong>you
+cannot judge your own edges at the size you have been looking at
+them.</strong></p>
+<hr />
+<h2 id="1--everything-looks-fine-at-fit-to-screen">1 · Everything looks
+fine at fit-to-screen</h2>
+<p>You work at whatever zoom shows the whole image. So does everybody.
+At that size a cut-out looks clean, a mask looks convincing, and two
+sources look like one photograph.</p>
+<p>None of that survives 100%.</p>
+<p><strong>100% means one image pixel per screen pixel</strong> — the
+actual data, not a preview. It is the size a printed poster is looked at
+from close range, and it is the size any professional looks at work
+before accepting it.</p>
+<p>The gap between those two views is where this week's marks live. A
+student who never leaves fit-to-screen is not checking their work; they
+are looking at a thumbnail of it.</p>
+<hr />
+<h2 id="2--selection-tools-are-mostly-wrong">2 · Selection tools are
+mostly wrong</h2>
+<p>Every selection tool is wrong for most subjects and right for a few.
+The skill is not learning the tools — it is asking <strong>what kind of
+edge is this?</strong></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Edge</th>
+<th>What works</th>
+<th>What fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hard, high contrast — a sign, a box</td>
+<td>Quick selection, magic wand</td>
+<td>Nothing much; this is the easy case</td>
+</tr>
+<tr>
+<td>Soft — hair, fur, foliage</td>
+<td>Refined edge tools, channels, patience</td>
+<td>Any hard-edged selection. It will look cut out because it was</td>
+</tr>
+<tr>
+<td>Semi-transparent — glass, smoke, water</td>
+<td>Blending and masking rather than selecting</td>
+<td>Selection of any kind. There is no line to find</td>
+</tr>
+<tr>
+<td>Motion-blurred</td>
+<td>Feathered masking, accepting some background</td>
+<td>Precision tools, which produce a sharp edge around a soft thing</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The test for 5.1 is whether the edge survives a new
+background</strong>, and that is a property of the choice rather than of
+the tool. A hair selection that looks perfect against the original grey
+wall will show every mistake against a dark sky.</p>
+<hr />
+<h2 id="3--masks-not-deletions">3 · Masks, not deletions</h2>
+<p>You met this argument in week 1 as adjustment layers. Here it is
+again at higher stakes.</p>
+<p><strong>Deleting a selection is final.</strong> The pixels are gone.
+If the edge is wrong — and the first edge is always wrong somewhere —
+you start again.</p>
+<p><strong>Masking hides instead of deleting.</strong> The pixels are
+still there, hidden by a mask you can paint back into. Wrong edge? Paint
+some back. Too much hair removed? Paint it back.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th>Delete</th>
+<th>Mask</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixing a mistake</td>
+<td>Start again</td>
+<td>Paint</td>
+</tr>
+<tr>
+<td>Refining over time</td>
+<td>Not possible</td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>What the file records</td>
+<td>The result</td>
+<td>The decision</td>
+</tr>
+<tr>
+<td>Visible in the export</td>
+<td>No</td>
+<td>No</td>
+</tr>
+</tbody>
+</table></div>
+<p>That last row is why this is graded on the working file rather than
+on the exported image. <strong>A deleted selection and a masked one
+produce an identical picture.</strong> The difference exists only in the
+file, and only until somebody flattens it.</p>
+<p><strong>5.2 asks for a mask that can be revised rather than
+redone</strong> — which is why the lab requires you to actually revise
+one. A mask that happened to be right first time demonstrates a lucky
+selection, not revisability.</p>
+<hr />
+<h2 id="4--smart-objects-briefly">4 · Smart objects, briefly</h2>
+<p>Scale an image down, then scale it back up, and you have lost detail
+permanently — the software threw pixels away at step one and invented
+them at step two.</p>
+<p>A <strong>smart object</strong> keeps the original data and applies
+your transformations as instructions. Scale it down and up as often as
+you like; the original is untouched.</p>
+<p>The thing to remember: <strong>damage compounds.</strong> Three
+destructive transformations are worse than one, and each one is
+invisible on its own.</p>
+<hr />
+<h2 id="5--the-join">5 · The join</h2>
+<p>A composite fails where two sources meet. Most students look only at
+the edge, and the edge is only half of it.</p>
+<p><strong>The edge</strong> — is it hard where it should be soft,
+haloed, or fringed with colour from the original background?</p>
+<p><strong>The match</strong> — do the two sources agree about:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th>The question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Light direction</strong></td>
+<td>Is your subject lit from the left and your background from the
+right?</td>
+</tr>
+<tr>
+<td><strong>Light quality</strong></td>
+<td>Hard sun on the subject, overcast on the background?</td>
+</tr>
+<tr>
+<td><strong>Colour temperature</strong></td>
+<td>Warm indoor light dropped into cool daylight?</td>
+</tr>
+<tr>
+<td><strong>Grain and sharpness</strong></td>
+<td>A clean modern file on a grainy scan, or a sharp subject on a soft
+background?</td>
+</tr>
+</tbody>
+</table></div>
+<p>A perfectly cut subject with the wrong light still reads as two
+photographs. Students see the edge because they worked on it for an
+hour, and stop seeing the whole.</p>
+<p><strong>5.3 asks whether the join announces itself</strong> — a
+whole-image judgment, not an edge one.</p>
+<hr />
+<h2 id="module-3-vocabulary">Module 3 vocabulary</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Selection</strong></td>
+<td>A defined region of an image, made in order to act on it</td>
+</tr>
+<tr>
+<td><strong>Mask</strong></td>
+<td>A non-destructive means of hiding part of a layer without deleting
+it</td>
+</tr>
+<tr>
+<td><strong>Composite</strong></td>
+<td>One image built from more than one source</td>
+</tr>
+<tr>
+<td><strong>Join</strong></td>
+<td>Where two composited sources meet. Judged at 100%, never at
+fit-to-screen</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="words-you-will-hear-but-do-not-own-yet">Words you will hear but
+do not own yet</h3>
+<ul>
+<li><strong>Treatment, consistency</strong> — how a set of images holds
+together. Owned and assessed in <strong>week 6</strong>.</li>
+<li><strong>Sequence</strong> — the order images are arranged in. Owned
+in <strong>week 7</strong>.</li>
+</ul>
+<hr />
+<h2 id="check-yourself-before-the-session">Check yourself before the
+session</h2>
+<p>Not graded. Two of these matter more than the others.</p>
+<ol type="1">
+<li>What does 100% actually mean, and why is it the size that
+matters?</li>
+<li><strong>You have selected hair against a grey wall and it looks
+perfect. What happens when you put it on a dark sky?</strong> <em>(If
+this is not obvious, re-read section 2.)</em></li>
+<li>Name two things a mask lets you do that a deleted selection does
+not.</li>
+<li>Why is this assessed on the working file rather than on the exported
+image?</li>
+<li><strong>Your cut-out is flawless and the composite still looks
+wrong. Name three things to check that are not the edge.</strong>
+<em>(If this is not obvious, re-read section 5.)</em></li>
+<li>What is a smart object for?</li>
+</ol>
+<hr />
+<h2 id="what-happens-in-the-session">What happens in the session</h2>
+<p>You will watch a composite that looks entirely convincing fall apart
+when it is zoomed to full size. Then in the <a href="lab.html">lab</a>
+you composite the hard subject you brought, revise your mask at least
+once, and check the join at 100% — twice, once yourself and once by a
+partner on a different machine.</p>
+<p>Campaign editing also begins, and critique session 2 runs. Afterwards
+you submit the composite as the <a
+href="assignment.html">assignment</a>, which is 10% of your course
+grade.</p>
+</article>
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>

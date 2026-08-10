@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 6 slides &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 6</a><span>/</span><em>Slides</em></nav>
+<h1>Week 6 slides<span class="sub">Making a set, not seven pictures</span></h1><p class="rvnote">What was on screen in class. Arrow keys or click to move.</p><div class="deckwrap" id="deckwrap"><div class="deck" id="deck" tabindex="0"><section class="slide split"><div class="stext"><p class="sn">1 / 7</p><h2>Is this one campaign?</h2><div class="sbody"><p>(Deliberately empty. One student's entire set goes on the
+wall.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">2 / 7</p><h2>Cleaner is not different</h2><div class="sbody">
+
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Cleaner</th>
+<th>Changed what it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Removed dust and a bright corner</td>
+<td>Darkened the room so the figure reads as alone</td>
+</tr>
+<tr>
+<td>Corrected a colour cast</td>
+<td>Warmed the light so the space reads as somewhere you would stay</td>
+</tr>
+<tr>
+<td>Straightened the horizon</td>
+<td>Cropped so the empty chairs are the subject</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>6.3 — what does it now say that the original did
+not?</strong></p>
+</div></div></section>
+<section class="slide split"><div class="stext"><p class="sn">3 / 7</p><h2>Demo — the same photograph, two edits</h2><div class="sbody">
+
+<p>(Deliberately empty. Two prepared versions, side by side, with
+the original.)</p>
+</div></div><p class="spend">Shown in class.</p></section>
+<section class="slide"><div class="stext"><p class="sn">4 / 7</p><h2>The maker&#x27;s side of week 2</h2><div class="sbody">
+
+<p>Removing a blemish · removing a bystander · removing the context that
+made a situation legible</p>
+<p><strong>Same technique. Three relationships to the
+truth.</strong></p>
+<p>Would the subject recognise themselves in this?</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">5 / 7</p><h2>A treatment has four parts</h2><div class="sbody">
+
+<p><strong>Tone</strong> · <strong>Colour</strong> ·
+<strong>Texture</strong> · <strong>Crop convention</strong></p>
+<p>The fourth one is the one you will forget.</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">6 / 7</p><h2>You cannot see this on a laptop</h2><div class="sbody">
+
+<p>A single photograph <strong>cannot be consistent with
+itself</strong>.</p>
+<p>Consistency is a relationship between images.<br />
+It is not on your screen. It is in the comparison.</p>
+</div></div></section>
+<section class="slide"><div class="stext"><p class="sn">7 / 7</p><h2>The lab, and what is due</h2><div class="sbody">
+
+<p><strong>1</strong> Display your <strong>whole set at
+once</strong><br />
+<strong>2</strong> Name the three things that drift most<br />
+<strong>3</strong> Pick a target image. Move the others toward it<br />
+<strong>4</strong> A partner names the one that does not belong<br />
+<strong>5</strong> Critique session 3</p>
+<p><strong>Due: Phase 3</strong> — working files, exports, and your
+<strong>unedited originals</strong></p>
+<p>0% as weekly work. 25% of your campaign.</p>
+</div></div></section></div><div class="dhud"><button type="button" id="prev">&larr; Back</button><span id="dcount"></span><span class="dright"><button type="button" id="fs">Full screen</button><button type="button" id="next">Next &rarr;</button></span></div></div>
+<script>
+(function(){
+  var d=document.getElementById('deck');
+  if(!d) return;
+  var s=[].slice.call(d.querySelectorAll('.slide')), i=0,
+      c=document.getElementById('dcount');
+  var pv=document.getElementById('prev'), nx=document.getElementById('next');
+  function show(n){ i=Math.max(0,Math.min(s.length-1,n));
+    s.forEach(function(el,k){el.classList.toggle('on',k===i);});
+    c.textContent=(i+1)+' / '+s.length;
+    pv.disabled=(i===0); nx.disabled=(i===s.length-1); }
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowRight'||e.key===' '){show(i+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'){show(i-1);e.preventDefault();}
+    else if(e.key==='Home'){show(0);e.preventDefault();}
+    else if(e.key==='End'){show(s.length-1);e.preventDefault();}});
+  d.addEventListener('click',function(){ if(i<s.length-1) show(i+1); });
+  document.getElementById('next').addEventListener('click',function(e){e.stopPropagation();show(i+1);});
+  document.getElementById('prev').addEventListener('click',function(e){e.stopPropagation();show(i-1);});
+  var wrap=document.getElementById('deckwrap'), fsb=document.getElementById('fs');
+  function inFS(){return document.fullscreenElement||document.webkitFullscreenElement;}
+  function paint(on){ wrap.classList.toggle('presenting',on);
+    document.body.classList.toggle('presenting',on);
+    fsb.textContent=on?'Exit full screen':'Full screen';
+    if(on) d.focus(); }
+  fsb.addEventListener('click',function(e){ e.stopPropagation();
+    var on=!wrap.classList.contains('presenting');
+    paint(on);
+    try{ if(on){ (wrap.requestFullscreen||wrap.webkitRequestFullscreen||function(){}).call(wrap); }
+         else if(inFS()){ (document.exitFullscreen||document.webkitExitFullscreen).call(document); } }
+    catch(err){}
+  });
+  ['fullscreenchange','webkitfullscreenchange'].forEach(function(ev){
+    document.addEventListener(ev,function(){ if(!inFS()) paint(false); });});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'&&wrap.classList.contains('presenting')) paint(false);});
+  d.addEventListener('click',function(e){
+    var b=e.target.closest('.opt'); if(!b) return;
+    e.stopPropagation();
+    var box=b.closest('.check'), fb=box.querySelector('.qfb'),
+        ok=b.dataset.k===box.dataset.answer;
+    box.querySelectorAll('.opt').forEach(function(o){o.classList.remove('picked');});
+    b.classList.add('picked');
+    box.classList.toggle('right',ok); box.classList.toggle('wrong',!ok);
+    var t=b.dataset.fb.replace(/^(Right|Yes|Correct)[.,]?\s*/i,'');
+    fb.innerHTML='<b>'+(ok?'Yes.':'Not this one.')+'</b> '+t;
+  },true);
+  var x=null;
+  d.addEventListener('touchstart',function(e){x=e.changedTouches[0].clientX;},{passive:true});
+  d.addEventListener('touchend',function(e){ if(x===null)return;
+    var dx=e.changedTouches[0].clientX-x; if(Math.abs(dx)>45) show(dx<0?i+1:i-1); x=null;},{passive:true});
+  show(0);
+})();
+</script>
+
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>

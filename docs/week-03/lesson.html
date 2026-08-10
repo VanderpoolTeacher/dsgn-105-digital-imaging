@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Week 03 · The numbers that decide whether a file arrives — Lesson &middot; DSGN 105</title>
+<link rel="stylesheet" href="../style.css?v=518163b1">
+</head>
+<body>
+<header class="bar">
+  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+</header>
+<main>
+<nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><a href="index.html">Week 3</a><span>/</span><em>Lesson</em></nav>
+<article class="doc"><h1
+id="week-03--the-numbers-that-decide-whether-a-file-arrives--lesson">Week
+03 · The numbers that decide whether a file arrives — Lesson</h1>
+<p><strong>DSGN 105 · Digital Imaging</strong></p>
+<p><strong>Read this before the session.</strong> About 20 minutes.</p>
+<p>The last two weeks were about how a file is built and where images
+come from. This week is about whether the file <strong>arrives</strong>
+— whether what you made survives being printed at A3, or posted to a
+feed, or sent to somebody who will open it on a phone.</p>
+<p>This is the least glamorous week in the course and the one that most
+often decides whether professional work is usable.</p>
+<hr />
+<h2 id="1--pixel-dimensions-are-the-only-real-measurement">1 · Pixel
+dimensions are the only real measurement</h2>
+<p>A raster image has a width and a height in pixels. That is the whole
+of what exists in the file.</p>
+<p><strong>Resolution does not exist until you name a physical
+size.</strong> An image is not "72 dpi" the way it is 3000 pixels wide.
+Resolution is the answer to a question — <em>how many pixels per inch
+when this is printed at this size</em> — and until somebody names the
+size, the question has not been asked.</p>
+<p>This inversion is the most useful idea of the week, and almost
+everything else follows from it.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>What students usually believe</th>
+<th>What is actually true</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The image "is" 72 dpi</td>
+<td>The image is 3000 × 2000 pixels. It becomes 72 ppi if you print it
+41 inches wide</td>
+</tr>
+<tr>
+<td>Increasing resolution improves the image</td>
+<td>Increasing resolution without adding pixels just prints it
+smaller</td>
+</tr>
+<tr>
+<td>A "high-res" image is a property you can request</td>
+<td>Pixel dimensions are the property. Resolution is a plan for
+them</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="2--ppi-and-dpi">2 · ppi and dpi</h2>
+<p>Two abbreviations, used interchangeably everywhere, meaning different
+things.</p>
+<p><strong>ppi — pixels per inch.</strong> A property of an image
+prepared for a physical size. Yours to decide.</p>
+<p><strong>dpi — dots per inch.</strong> A property of a printing device
+— how finely the machine can place ink. Not yours; the printer's.</p>
+<p>You will see "300 dpi" used to mean "a good print image" for the rest
+of your career. It is worth knowing that the phrase is wrong and what it
+is trying to say: <em>enough pixels that, at the size I am printing,
+there are about 300 of them per inch.</em></p>
+<hr />
+<h2 id="3--what-enough-pixels-means">3 · What "enough pixels" means</h2>
+<p>A useful rule of thumb, and it is a rule of thumb rather than a
+law:</p>
+<blockquote>
+<p><strong>Pixels needed = printed size in inches × target
+ppi</strong></p>
+</blockquote>
+<p>An A3 poster is roughly 11.7 × 16.5 inches. At 300 ppi that needs
+about <strong>3510 × 4950 pixels</strong>.</p>
+<p>Now look at the three numbers you measured before class. A recent
+phone photograph is comfortably above that. A web image is nowhere near.
+A screenshot is somewhere in between and depends entirely on the screen
+it came from.</p>
+<p><strong>The image cannot be rescued by asking for more
+resolution.</strong> Setting a small image to 300 ppi does not add
+pixels — the software simply prints it smaller, or invents the missing
+ones, which is what makes an enlarged photograph look soft.</p>
+<hr />
+<h2 id="4--file-formats-are-a-set-of-costs">4 · File formats are a set
+of costs</h2>
+<p>There is no best format. Every one gives something up, and choosing
+well means knowing what you are willing to lose.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Gives you</th>
+<th>Costs you</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PSD</strong></td>
+<td>Layers, masks, everything editable</td>
+<td>Enormous; nobody outside the studio can open it</td>
+</tr>
+<tr>
+<td><strong>TIFF</strong></td>
+<td>Lossless quality, print-ready, wide support</td>
+<td>Very large files</td>
+</tr>
+<tr>
+<td><strong>JPG</strong></td>
+<td>Small files, universal</td>
+<td>Compression artefacts that worsen every time you re-save. No
+transparency</td>
+</tr>
+<tr>
+<td><strong>PNG</strong></td>
+<td>Lossless, transparency</td>
+<td>Large for photographs; poor fit for print</td>
+</tr>
+<tr>
+<td><strong>PDF</strong></td>
+<td>Reliable for print, holds colour and type</td>
+<td>Not an editing format; awkward for screen posting</td>
+</tr>
+</tbody>
+</table></div>
+<p>The question to ask is never "which format is best". It is
+<strong>"what am I willing to lose here, for this
+destination?"</strong></p>
+<hr />
+<h2 id="5--colour-systems-and-what-cannot-be-recovered">5 · Colour
+systems, and what cannot be recovered</h2>
+<p><strong>RGB</strong> builds colour from light — red, green, blue.
+Screens work this way. It can express very saturated colours.</p>
+<p><strong>CMYK</strong> builds colour from ink — cyan, magenta, yellow,
+black. Print works this way. It cannot express some of the colours RGB
+can.</p>
+<p><strong>Gamut</strong> is the range of colours a system can express.
+RGB's is larger than CMYK's, and the difference is the part that
+matters:</p>
+<blockquote>
+<p><strong>Converting RGB to CMYK loses colours that have no ink
+equivalent. Converting back does not bring them back.</strong></p>
+</blockquote>
+<p>The bright saturated blue that looked electric on your screen becomes
+a duller blue in print, and if you then convert that back to RGB you get
+the duller blue, not the original. <strong>The conversion is one-way in
+practice</strong>, which is why you keep your working file in the colour
+system you are editing in and convert on export — not before.</p>
+<hr />
+<h2 id="6--the-check">6 · The check</h2>
+<p>Exporting is not the last step. <strong>Opening the exported file and
+reading its actual numbers is.</strong></p>
+<p>It takes ten seconds when it is a habit and it never happens when it
+is not. It is also, this week, exactly what you are graded on: the
+specification you write and the file you deliver either agree or they do
+not, and that is checkable without anybody's opinion.</p>
+<p>The common failure is writing the statement from the export dialogue
+rather than from the file. <strong>The dialogue shows what you asked
+for. The file shows what happened.</strong> On this outcome those are
+different things.</p>
+<hr />
+<h2 id="module-2-vocabulary">Module 2 vocabulary</h2>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Destination</strong></td>
+<td>The specific place an image is going — a stated print size and
+stock, or a stated platform and placement. Never "print" or "digital"
+alone</td>
+</tr>
+<tr>
+<td><strong>Specification statement</strong></td>
+<td>The written record of pixel dimensions and resolution, file format,
+and colour system chosen for one destination, with the reason for
+each</td>
+</tr>
+<tr>
+<td><strong>Pixel dimensions</strong></td>
+<td>The width and height of an image in pixels. The only measure that
+exists in the file itself</td>
+</tr>
+<tr>
+<td><strong>Resolution</strong></td>
+<td>Pixels per unit of physical output. Meaningless without a stated
+physical size</td>
+</tr>
+<tr>
+<td><strong>ppi</strong></td>
+<td>Pixels per inch — a property of an image prepared for a physical
+size</td>
+</tr>
+<tr>
+<td><strong>dpi</strong></td>
+<td>Dots per inch — a property of a printing device, not of an image
+file</td>
+</tr>
+<tr>
+<td><strong>File format</strong></td>
+<td>The container an image is written to, each with a different
+cost</td>
+</tr>
+<tr>
+<td><strong>Colour system</strong></td>
+<td>The model describing how colour values are stored — RGB, CMYK,
+Lab</td>
+</tr>
+<tr>
+<td><strong>Gamut</strong></td>
+<td>The range of colours a system can express. What is lost moving RGB
+to CMYK</td>
+</tr>
+<tr>
+<td><strong>Export</strong></td>
+<td>Writing a file for a destination from a working file. The working
+file is never the delivery</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="words-you-will-hear-but-do-not-own-yet">Words you will hear but
+do not own yet</h3>
+<ul>
+<li><strong>Treatment, consistency</strong> — mentioned when we talk
+about a set of images holding together. Owned and assessed in
+<strong>week 6</strong>.</li>
+</ul>
+<hr />
+<h2 id="check-yourself-before-the-session">Check yourself before the
+session</h2>
+<p>Not graded. Two of these matter more than the others.</p>
+<ol type="1">
+<li>An image is 1200 × 800 pixels. What is its resolution?</li>
+<li><strong>You need an A3 poster at 300 ppi. Roughly how many pixels do
+you need, and does your phone photograph have them?</strong> <em>(If
+this is not obvious, re-read section 3.)</em></li>
+<li>What is the difference between ppi and dpi, and which one is yours
+to decide?</li>
+<li>Name one thing JPG gives you and one thing it costs you.</li>
+<li><strong>You convert an image to CMYK, then back to RGB. What did you
+get back?</strong> <em>(If this is not obvious, re-read section
+5.)</em></li>
+<li>Why is "print" not a destination?</li>
+</ol>
+<hr />
+<h2 id="what-happens-in-the-session">What happens in the session</h2>
+<p>You will hold two prints of the same image made at different
+resolutions — the one argument in this week that a screen cannot make.
+Then in the <a href="lab.html">lab</a> you take one supplied image to
+two named destinations and write a specification statement for each.</p>
+<p>Afterwards you submit both exports and both statements as the <a
+href="assignment.html">assignment</a>, which is 10% of your course
+grade.</p>
+</article>
+</main>
+<footer>
+  <p>DSGN 105 &middot; Digital Imaging</p>
+  <p class="fine">Student materials, generated from course source.</p>
+</footer>
+</body>
+</html>
