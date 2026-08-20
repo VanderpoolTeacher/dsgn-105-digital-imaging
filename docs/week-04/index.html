@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Week 4 &middot; DSGN 105</title>
-<link rel="stylesheet" href="../style.css?v=518163b1">
+<link rel="stylesheet" href="../style.css?v=61f2cc37">
 </head>
 <body>
 <header class="bar">
-  <a class="home" href="../index.html"><b>DSGN 105</b> <span>Digital Imaging</span></a>
+  <a class="home" href="../index.html"><svg class="hico" viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.9 10.7 11.3 3.5a1.1 1.1 0 0 1 1.4 0l8.4 7.2"/><path d="M5.4 9.1v10.3a1 1 0 0 0 1 1h11.2a1 1 0 0 0 1-1V9.1"/><path d="M9.7 20.4v-5.1h4.6v5.1"/></svg><b>DSGN 105</b> <span>Digital Imaging</span></a>
 </header>
 <main>
 <nav class="crumb"><a href="../index.html">All weeks</a><span>/</span><em>Week 4</em></nav>
-<h1>Week 4<span class="sub">What the eye does first</span></h1><ul class="cards"><li><a href="lesson.html"><span class="kind">Lesson</span><span class="t">Week 04 · What the eye does first — Lesson</span></a></li>
+<h1>Week 4 &middot; What the eye does first</h1><div class="tabs" data-tabs><div class="tabstrip" role="tablist" aria-label="Week 4 summary"><button type="button" role="tab" class="tab is-on" id="t-ov-4" aria-controls="p-ov-4" aria-selected="true" tabindex="0">Overview</button><button type="button" role="tab" class="tab" id="t-td-4" aria-controls="p-td-4" aria-selected="false" tabindex="-1">To Do List</button></div><div class="tabpanel" id="p-ov-4" role="tabpanel" aria-labelledby="t-ov-4"><p>You find out that visual hierarchy is a claim about somebody else&#x27;s eye — and that your own certainty about your image is not evidence.</p><p class="lolead">By the end of this week you can</p><ul class="los"><li data-n="4.1">*Name the compositional mechanism producing the reading order in an image you did not make*</li><li data-n="4.2">*State an intended reading order before showing an image to anyone*</li><li data-n="4.3">*Run a reading-order test without leading the viewer*</li><li data-n="4.4">*Revise a composition in response to a reported order that contradicted the intent*</li></ul><p class="asmt"><span>Assessment</span>module summative · 5% of the course grade.</p></div><div class="tabpanel" id="p-td-4" role="tabpanel" aria-labelledby="t-td-4"><p class="rvnote">To successfully complete Week 4, please do the following:</p><ol><li><span class="v">Read</span><a href="lesson.html">Week 04 · What the eye does first — Lesson</a></li><li><span class="v">Review</span><a href="slides.html">8 slides from class</a></li><li><span class="v">Do</span><a href="lab.html">Week 04 Lab — Test an image you did not make, then start shooting</a></li><li><span class="v">Submit</span><a href="assignment.html">Week 04 Assignment — The reading-order test</a></li><li><span class="v">Review</span><span>Provided material &mdash; 1.75 h this week. Distributed in class.</span></li></ol></div></div><ul class="cards"><li><a href="lesson.html"><span class="kind">Lesson</span><span class="t">Week 04 · What the eye does first — Lesson</span></a></li>
 <li><a href="slides.html"><span class="kind">Slides</span><span class="t">8 slides from class</span></a></li>
 <li><a href="lab.html"><span class="kind">Lab</span><span class="t">Week 04 Lab — Test an image you did not make, then start shooting</span></a></li>
 <li><a href="assignment.html"><span class="kind">Assignment</span><span class="t">Week 04 Assignment — The reading-order test</span></a></li></ul><section class="review"><h2>Review before class<span class="hrs">1.75 h</span></h2><p class="rvnote">Material is provided in class. This is on top of the lesson, the lab and the assignment.</p><div class="standing"><p><strong>Read and look against what we are doing in class that
@@ -28,10 +28,42 @@ vocabulary, you have not finished with it yet.</strong> That is the same
 demand every critique in this course makes, practised on work nobody is
 grading.</p>
 <p class="gl">Terms are in the <a href="../reference/glossary.html">Glossary</a>, by module.</p></div></section>
+<script>
+(function(){
+  var w = document.querySelector('[data-tabs]');
+  if(!w) return;
+  var tabs = [].slice.call(w.querySelectorAll('[role=tab]')),
+      panels = [].slice.call(w.querySelectorAll('[role=tabpanel]'));
+  if(tabs.length < 2) return;
+  function show(n){
+    tabs.forEach(function(t,i){
+      var on = i === n;
+      t.classList.toggle('is-on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      panels[i].hidden = !on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click', function(){ show(i); });
+    t.addEventListener('keydown', function(e){
+      var n = null;
+      if(e.key === 'ArrowRight') n = (i+1) % tabs.length;
+      if(e.key === 'ArrowLeft')  n = (i-1+tabs.length) % tabs.length;
+      if(e.key === 'Home') n = 0;
+      if(e.key === 'End')  n = tabs.length-1;
+      if(n === null) return;
+      e.preventDefault(); show(n); tabs[n].focus();
+    });
+  });
+  show(0);   // panels are unhidden in the markup, so JS-off shows both
+})();
+</script>
+
 </main>
 <footer>
   <p>DSGN 105 &middot; Digital Imaging</p>
-  <p class="fine">Student materials, generated from course source.</p>
+  <p class="fine">Student materials, generated from course source. <a href="../reference/accessibility.html">Accessibility</a></p>
 </footer>
 </body>
 </html>
